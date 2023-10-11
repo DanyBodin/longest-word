@@ -1,0 +1,16 @@
+import string
+import random
+
+class Game:
+    """Define a grid"""
+    def __init__(self) -> list:
+        """Attribute a random grid to size 9"""
+        self.grid = random.choices(string.ascii_uppercase, k=9)
+
+    def is_valid(self, word: str) -> bool:
+        """Return True if and only if the word is valid, given the Game's grid"""
+        if not word:return False
+        if len(word) > len(self.grid):return False
+        for w in word:
+            if word.count(w) == self.grid.count(w):return True
+            else:return False
