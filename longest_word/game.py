@@ -20,7 +20,3 @@ class Game:
         dict_url = f'https://wagon-dictionary.herokuapp.com/{word}'
         dict_response = requests.get(dict_url)
         return dict_response.json()['found']
-
-if __name__ == "__name__":
-    newG = Game()
-    print(newG.check_dict("cheval"))
